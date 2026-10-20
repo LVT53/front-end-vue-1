@@ -4,6 +4,8 @@ import { ref } from 'vue'
 const name = ref('Levente Alfoldy')
 const bio = ref('Hit me, Batman!')
 const likes = ref(0)
+const showFact = ref(false)
+const fact = ref('Nicholas Cage was not ACTUALLY set on fire while filming the movie Ghost Rider.')
 // TASK 4: Create a reactive likes counter.
 // TASK 5: Create reactive showFact and fact values.
 </script>
@@ -21,6 +23,11 @@ const likes = ref(0)
       <button type="button" @click="likes++">Like this page</button>
       <p aria-live="polite">Likes: {{ likes }}</p>
       <!-- TASK 5: Add a toggle button and v-if paragraph here. -->
+      <button type="button" @click="showFact = !showFact"
+              :aria-expanded="showFact" aria-controls="fact">
+        {{ showFact ? 'Hide fun fact' : 'Show fun fact' }}
+      </button>
+      <p id="fact" v-if="showFact">{{ fact }}</p>
     </article>
   </main>
 </template>
