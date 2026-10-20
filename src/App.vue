@@ -6,6 +6,7 @@ const bio = ref('Hit me, Batman!')
 const likes = ref(0)
 const showFact = ref(false)
 const fact = ref('Nicholas Cage was not ACTUALLY set on fire while filming the movie Ghost Rider.')
+const hobbies = ref(['Snowboarding','Dying hair','Eating popcorn'])
 // TASK 4: Create a reactive likes counter.
 // TASK 5: Create reactive showFact and fact values.
 </script>
@@ -19,8 +20,11 @@ const fact = ref('Nicholas Cage was not ACTUALLY set on fire while filming the m
       <!-- TASK 2: Add a labelled input with v-model="name" here. -->
       <label for="name">Your name</label>
       <input id="name" v-model="name" maxlength="60">
+      <label for="bio">Your bio</label>
+      <input id="bio" v-model="bio" maxlength="60">
       <!-- TASK 4: Add a button, click counter and @click here. -->
       <button type="button" @click="likes++">Like this page</button>
+      <button type="button" @click="likes = 0">Reset counter</button>
       <p aria-live="polite">Likes: {{ likes }}</p>
       <!-- TASK 5: Add a toggle button and v-if paragraph here. -->
       <button type="button" @click="showFact = !showFact"
@@ -28,6 +32,10 @@ const fact = ref('Nicholas Cage was not ACTUALLY set on fire while filming the m
         {{ showFact ? 'Hide fun fact' : 'Show fun fact' }}
       </button>
       <p id="fact" v-if="showFact">{{ fact }}</p>
+      <!-- Optional challenges -->
+      <ul>
+        <li v-for="hobbies in hobbies" :key="hobbies.id">{{ hobbies }}</li>
+      </ul>
     </article>
   </main>
 </template>
