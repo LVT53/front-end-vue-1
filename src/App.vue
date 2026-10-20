@@ -3,6 +3,7 @@ import { ref } from 'vue'
 
 const name = ref('Levente Alfoldy')
 const bio = ref('Hit me, Batman!')
+const likes = ref(0)
 // TASK 4: Create a reactive likes counter.
 // TASK 5: Create reactive showFact and fact values.
 </script>
@@ -17,6 +18,8 @@ const bio = ref('Hit me, Batman!')
       <label for="name">Your name</label>
       <input id="name" v-model="name" maxlength="60">
       <!-- TASK 4: Add a button, click counter and @click here. -->
+      <button type="button" @click="likes++">Like this page</button>
+      <p aria-live="polite">Likes: {{ likes }}</p>
       <!-- TASK 5: Add a toggle button and v-if paragraph here. -->
     </article>
   </main>
