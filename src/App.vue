@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 
-const name = ref('Alex Morgan')
-const bio = ref('I am learning to build interactive web pages.')
+const name = ref('Levente Alfoldy')
+const bio = ref('Hit me, Batman!')
 // TASK 4: Create a reactive likes counter.
 // TASK 5: Create reactive showFact and fact values.
 </script>
