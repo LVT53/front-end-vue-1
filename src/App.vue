@@ -14,6 +14,8 @@ const bio = ref('Hit me, Batman!')
       <h1>{{ name }}</h1>
       <p>{{ bio }}</p>
       <!-- TASK 2: Add a labelled input with v-model="name" here. -->
+      <label for="name">Your name</label>
+      <input id="name" v-model="name" maxlength="60">
       <!-- TASK 4: Add a button, click counter and @click here. -->
       <!-- TASK 5: Add a toggle button and v-if paragraph here. -->
     </article>
